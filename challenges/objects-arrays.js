@@ -84,8 +84,11 @@ Once you have the new array created, sort the universities alphabetically and lo
   }
   return result.sort();
 };
+console.log(universities());
 
-console.log(universities())
+// Request 1 using map:
+// const universities = graduates.map(element => element.university);
+// console.log(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -98,8 +101,17 @@ console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = graduates.filter(element => element.university.includes("Uni"));
-console.log(uni);
+function uni() {
+  let result = [];
+  for(let i = 0; i < graduates.length; i++) {
+    let contains = graduates[i].university;
+    if(contains.includes('Uni')){
+      result.push(contains)
+    }
+  }
+  return result;
+}
+console.log(uni());
 
 
 // ==== ADVANCED Array Methods ====
